@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(blank=True, help_text='The title that should appear on the cookie bar. Leave empty for the default value.', max_length=50, null=True)),
-                ('text', wagtail.core.fields.RichTextField(blank=True, help_text='The text that should appear on the cookie bar. Leave empty for the default value.', null=True)),
+                ('text', wagtail.fields.RichTextField(blank=True, help_text='The text that should appear on the cookie bar. Leave empty for the default value.', null=True)),
                 ('site', models.OneToOneField(editable=False, on_delete=django.db.models.deletion.CASCADE, to='wagtailcore.Site')),
             ],
             options={
