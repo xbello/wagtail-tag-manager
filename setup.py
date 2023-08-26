@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "wagtail>=4.1,<5.1",
+    "wagtail>=4.1,<5.2",
     "selenium>=3.141.0,<3.142.0",
 ]
 
@@ -31,7 +31,7 @@ with open('README.md') as fh:
 
 setup(
     name="wagtail-tag-manager",
-    version="1.8.0",
+    version="1.9.0",
     description="A Wagtail add-on for managing tags.",
     author="Jasper Berghoef",
     author_email="j.berghoef@me.com",
@@ -51,15 +51,13 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
-        "Framework :: Django :: 3.2",
         "Framework :: Django :: 4.1",
         "Framework :: Django :: 4.2",
         "Framework :: Wagtail :: 4.1",
-        "Framework :: Wagtail :: 4.2",
         "Framework :: Wagtail :: 5.0",
+        "Framework :: Wagtail :: 5.1",
     ],
 )

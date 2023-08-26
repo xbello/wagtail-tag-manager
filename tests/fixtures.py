@@ -13,11 +13,12 @@ from tests.factories.site import SiteFactory
 @pytest.fixture(scope="function")
 def site():
     try:
-        from wagtail.models import Locale  # noqa
+        pass
+        #from wagtail.models import Locale  # noqa
 
-        from tests.factories.locale import LocaleFactory
+        #from tests.factories.locale import LocaleFactory
 
-        LocaleFactory()
+        #LocaleFactory()
     except:  # noqa: E722
         pass
 

@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import wagtail.fields
+from modelcluster.fields import ParentalManyToManyField
 import django.db.models.deletion
 from django.db import models, migrations
 
@@ -13,6 +14,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtailcore', '0001_initial'),
+        ("wagtail_tag_manager", "0001_initial"),
     ]
 
     operations = [
@@ -26,6 +28,20 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases='wagtailcore.page',
+            bases=['wagtailcore.page'],
+        ),
+        migrations.CreateModel(
+            name="TaggableContentPage",
+            fields=[
+                ('contentpage_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),  # noqa: E501
+                ('subtitle', models.CharField(blank=True, default='', null=True, max_length=255)),
+                ('body', wagtail.fields.RichTextField(blank=True, default='', null=True)),
+                ("wtm_include_children", models.BooleanField(default=False)),
+                ("wtm_tags", ParentalManyToManyField(to="wagtail_tag_manager.tag", null=True)),
+            ],
+            options={
+                'abstract': False,
+            },
+            bases=['wagtailcore.page'],
         ),
     ]
